@@ -3,26 +3,34 @@ import {RouteProps} from "react-router";
 import {Dashboard} from "../routes/Dashboard";
 import {Login} from "../routes/Login";
 import {AccountActivation} from "../routes/AccountActivation";
+import {withLoginProtection} from "../hocs/withLoginProtection";
+
+export enum RoutePaths {
+    dashboard = '/dashboard',
+    accountActivation = '/account-activation',
+    login = '/login',
+    home = '/',
+}
 
 export const routeConfigs: ReadonlyArray<RouteProps> = [
     {
-        path: '/dashboard',
+        path: RoutePaths.dashboard,
         exact: true,
-        component: Dashboard,
+        component: withLoginProtection(Dashboard),
     },
     {
-        path: '/account-activation',
+        path: RoutePaths.accountActivation,
         exact: true,
         component: AccountActivation,
     },
     {
-        path: '/login',
+        path: RoutePaths.login,
         exact: true,
         component: Login,
     },
     {
-        path: '/',
+        path: RoutePaths.home,
         exact: true,
-        component: Dashboard,
+        component: withLoginProtection(Dashboard),
     }
 ]

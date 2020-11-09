@@ -2,12 +2,13 @@ import React, {ChangeEventHandler, FC, MouseEventHandler, useState} from 'react'
 import {useHistory} from 'react-router'
 
 import {useAuth} from "../hooks/useAuth";
+import {RoutePaths} from "../app/routeConfigs";
 
 export const AccountActivation: FC = () => {
     const [userName, setUserName] = useState('')
     const [password, setPassword] = useState('')
     const history = useHistory()
-    const {addUser} = useAuth()
+    const {addUser, loginUser} = useAuth()
 
     const validateUserName = (userName: string) => userName.length > 0
     const validatePassword = (password: string) => password.length > 0
@@ -18,13 +19,13 @@ export const AccountActivation: FC = () => {
     const handleActivation: MouseEventHandler<HTMLButtonElement> = () => {
         if (validateUserName(userName) && validatePassword(password)) {
             addUser({userName, password})
-            history.push('/dashboard')
+            loginUser({userName, password})
+            history.push(RoutePaths.dashboard)
         }
     }
 
     return (
         <div>
-
             <div>
                 <label htmlFor='user-name'>Username:</label>
                 <input type='text' value={userName} onChange={handleChangeUsername} name='user-name'/>

@@ -7,6 +7,7 @@ interface AuthProps {
     isRegisteredUser: (user: User) => boolean
     loginUser: (user: User) => void
     currentUserName: string | null
+    isLoggedIn: () => boolean
 }
 
 export const useAuth = (): AuthProps => {
@@ -27,6 +28,8 @@ export const useAuth = (): AuthProps => {
         return !!userList.find(({userName}) => userName === user.userName)
     }
 
+    const isLoggedIn = (): boolean => !!getCurrentUserName()
+
     const loginUser = (user: User) => {
         addCurrentUser(user)
     }
@@ -34,6 +37,7 @@ export const useAuth = (): AuthProps => {
     return {
         addUser,
         isRegisteredUser,
+        isLoggedIn,
         loginUser,
         currentUserName: getCurrentUserName(),
     }

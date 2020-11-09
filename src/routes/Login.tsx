@@ -1,6 +1,8 @@
 import React, {ChangeEventHandler, MouseEventHandler, useState} from 'react';
 import {useHistory} from "react-router";
+
 import {useAuth} from "../hooks/useAuth";
+import {RoutePaths} from "../app/routeConfigs";
 
 export const Login = () => {
     const [userName, setUserName] = useState('')
@@ -15,7 +17,7 @@ export const Login = () => {
     const handleLogin: MouseEventHandler<HTMLButtonElement> = () => {
         if (isRegisteredUser({userName, password})) {
             loginUser({userName, password})
-            history.push('/dashboard')
+            history.push(RoutePaths.dashboard)
         } else {
             setErrors(`There is no user with name "${userName}"`)
         }
