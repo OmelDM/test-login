@@ -4,7 +4,7 @@ import {User} from "../types";
 
 interface AuthProps {
     addUser: (user: User) => void
-    isRegisteredUser: (user: User) => boolean
+    isRegisteredUser: (name: string) => boolean
     loginUser: (user: User) => void
     currentUserName: string | null
     isLoggedIn: () => boolean
@@ -23,9 +23,9 @@ export const useAuth = (): AuthProps => {
         ])
     }
 
-    const isRegisteredUser = (user: User): boolean => {
+    const isRegisteredUser = (name: string): boolean => {
         const userList = getUserList()
-        return !!userList.find(({userName}) => userName === user.userName)
+        return !!userList.find(({userName}) => userName === name)
     }
 
     const isLoggedIn = (): boolean => !!getCurrentUserName()

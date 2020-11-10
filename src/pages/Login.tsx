@@ -15,7 +15,7 @@ export const Login = () => {
     const handleChangePassword: ChangeEventHandler<HTMLInputElement> = (event) => setPassword(event.target.value)
 
     const handleLogin: MouseEventHandler<HTMLButtonElement> = () => {
-        if (isRegisteredUser({userName, password})) {
+        if (isRegisteredUser(userName)) {
             loginUser({userName, password})
             history.push(RoutePaths.dashboard)
         } else {
