@@ -1,11 +1,15 @@
 import React, {ChangeEventHandler, FC, MouseEventHandler, useState} from 'react';
-import {useHistory} from 'react-router'
+import {useHistory} from "react-router";
 
-import {useAuth} from "../hooks/useAuth";
-import {RoutePaths} from "../app/routeConfigs";
+import {useAuth} from "../../hooks/useAuth";
+import {RoutePaths} from "../../app/routeConfigs";
 
-export const AccountActivation: FC = () => {
-    const [userName, setUserName] = useState('')
+interface ActivationFormProps {
+    name?: string
+}
+
+export const ActivationForm: FC<ActivationFormProps> = ({name}) => {
+    const [userName, setUserName] = useState(name || '')
     const [password, setPassword] = useState('')
     const history = useHistory()
     const {addUser, loginUser} = useAuth()

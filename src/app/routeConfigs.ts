@@ -1,8 +1,8 @@
 import {RouteProps} from "react-router";
 
-import {Dashboard} from "../routes/Dashboard";
-import {Login} from "../routes/Login";
-import {AccountActivation} from "../routes/AccountActivation";
+import {Dashboard} from "../pages/Dashboard";
+import {Login} from "../pages/Login";
+import {AccountActivation} from "../pages/account_activation/AccountActivation";
 import {withLoginProtection} from "../hocs/withLoginProtection";
 
 export enum RoutePaths {
