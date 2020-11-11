@@ -1,0 +1,22 @@
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.login__item {
+    margin-bottom: 48px;
+}
+
+.login__item_button {
+    display: flex;
+    justify-content: center;
+}
+
+.login__item:last-child {
+    margin-bottom: 0;
+}
+
+.login__item_errors {
+    color: red;
+}

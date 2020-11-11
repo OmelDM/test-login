@@ -3,6 +3,11 @@ import {useHistory} from "react-router";
 
 import {useAuth} from "../../hooks/useAuth";
 import {RoutePaths} from "../../app/routeConfigs";
+import {Card} from '../../components/Card';
+import {Input} from "../../components/Input";
+import {Button} from '../../components/Button';
+
+import './ActivationForm.css'
 
 interface ActivationFormProps {
     name?: string
@@ -29,16 +34,20 @@ export const ActivationForm: FC<ActivationFormProps> = ({name}) => {
     }
 
     return (
-        <div>
-            <div>
-                <label htmlFor='user-name'>Username:</label>
-                <input type='text' value={userName} onChange={handleChangeUsername} name='user-name'/>
+        <Card>
+            <div className='activation'>
+                <div className='activation__item'>
+                    <div className='activation__item-title'>Username:</div>
+                    <Input type='text' value={userName} onChange={handleChangeUsername}/>
+                </div>
+                <div className='activation__item'>
+                    <div className='activation__item-title'>Password:</div>
+                    <Input type='password' value={password} onChange={handleChangePassword}/>
+                </div>
+                <div className='activation__item'>
+                    <Button onClick={handleActivation}>Activate</Button>
+                </div>
             </div>
-            <div>
-                <label htmlFor='password'>Password:</label>
-                <input type='password' value={password} onChange={handleChangePassword} name='password'/>
-            </div>
-            <button onClick={handleActivation}>Activate</button>
-        </div>
+        </Card>
     );
 };

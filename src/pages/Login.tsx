@@ -3,6 +3,11 @@ import {useHistory} from "react-router";
 
 import {useAuth} from "../hooks/useAuth";
 import {RoutePaths} from "../app/routeConfigs";
+import {Card} from '../components/Card';
+import {Button} from '../components/Button';
+import {Input} from "../components/Input";
+
+import './Login.css'
 
 export const Login = () => {
     const [userName, setUserName] = useState('')
@@ -24,21 +29,21 @@ export const Login = () => {
     }
 
     return (
-        <div>
-            <div>
-                <label htmlFor='user-name'>Username:</label>
-                <input type='text' value={userName} onChange={handleChangeUsername} name='user-name'/>
-            </div>
-            <div>
-                <label htmlFor='password'>Password:</label>
-                <input type='password' value={password} onChange={handleChangePassword} name='password'/>
-            </div>
-            {errors && (
-                <div>
-                    {errors}
+        <Card>
+            <div className='login'>
+                <div className='login__item'>
+                    <Input type='text' value={userName} onChange={handleChangeUsername} placeholder='User Name'/>
                 </div>
-            )}
-            <button onClick={handleLogin}>Login</button>
-        </div>
+                <div className='login__item'>
+                    <Input type='password' value={password} onChange={handleChangePassword} placeholder='Password'/>
+                </div>
+                {errors && (
+                    <div className='login__item login__item_errors'>
+                        {errors}
+                    </div>
+                )}
+                <div className='login__item login__item_button'><Button onClick={handleLogin}>Login</Button></div>
+            </div>
+        </Card>
     );
 };

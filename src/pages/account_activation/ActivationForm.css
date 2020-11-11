@@ -1,0 +1,15 @@
+.activation__item {
+    margin-bottom: 32px;
+}
+
+.activation__item:last-child {
+    margin-bottom: 0;
+}
+
+.activation__item-title {
+    margin-bottom: 12px;
+    color: white;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding-left: 22px;
+}

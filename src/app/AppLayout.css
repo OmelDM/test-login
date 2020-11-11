@@ -1,0 +1,23 @@
+.app-layout {
+    height: 100vh;
+    position: relative;
+}
+
+.app-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.app-background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url("../images/main-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(18px);
+}

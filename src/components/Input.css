@@ -1,0 +1,16 @@
+.input {
+    color: #67a1d1;
+    background-color: white;
+    font-size: 18px;
+    padding: 12px 24px;
+    border-radius: 24px;
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+}
+
+.input::placeholder {
+    color: #67a1d1;
+    text-transform: uppercase;
+}
