@@ -32,7 +32,7 @@ export const Login = () => {
         <Card>
             <div className='login'>
                 <div className='login__item'>
-                    <Input type='text' value={userName} onChange={handleChangeUsername} placeholder='User Name'/>
+                    <Input type='text' value={userName} onChange={handleChangeUsername} placeholder='Username'/>
                 </div>
                 <div className='login__item'>
                     <Input type='password' value={password} onChange={handleChangePassword} placeholder='Password'/>

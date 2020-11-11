@@ -1,6 +1,6 @@
 .card {
-    min-width: 450px;
-    padding: 96px 48px;
+    min-width: 380px;
+    padding: 128px 48px 72px 48px;
     border-radius: 24px;
     background: linear-gradient(rgba(78, 121, 156, 1), rgba(78, 121, 156, 0.7)), url("../images/main-bg.jpg") no-repeat;
     background-size: cover;

@@ -8,5 +8,6 @@ export const AppRoutes: FC = () => (
         {
             routeConfigs.map((config, index) => <Route key={index} {...config}/>)
         }
+        <Route component={() => <h1>404</h1>} />
     </Switch>
 )

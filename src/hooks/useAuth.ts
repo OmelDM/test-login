@@ -1,11 +1,12 @@
 import {getUserList, setUserList} from "../utils/storage";
-import {addCurrentUser, getCurrentUserName} from "../utils/session";
+import {addCurrentUser, getCurrentUserName, removeCurrentUser} from "../utils/session";
 import {User} from "../types";
 
 interface AuthProps {
     addUser: (user: User) => void
     isRegisteredUser: (name: string) => boolean
     loginUser: (user: User) => void
+    logout: () => void
     currentUserName: string | null
     isLoggedIn: () => boolean
 }
@@ -34,11 +35,16 @@ export const useAuth = (): AuthProps => {
         addCurrentUser(user)
     }
 
+    const logout = (): void => {
+        removeCurrentUser()
+    }
+
     return {
         addUser,
         isRegisteredUser,
         isLoggedIn,
         loginUser,
+        logout,
         currentUserName: getCurrentUserName(),
     }
 }

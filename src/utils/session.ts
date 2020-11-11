@@ -7,4 +7,8 @@ export const addCurrentUser = (user: User) => {
     sessionStorage.setItem(CURRENT_USER, user.userName)
 }
 
+export const removeCurrentUser = () => {
+    sessionStorage.removeItem(CURRENT_USER)
+}
+
 export const getCurrentUserName = (): string | null => sessionStorage.getItem(CURRENT_USER)

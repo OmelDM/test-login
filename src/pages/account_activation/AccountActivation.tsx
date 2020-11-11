@@ -22,5 +22,5 @@ export const AccountActivation: FC = () => {
         history.push(RoutePaths.login)
     }
 
-    return !magicHash ? <h1>Wrong link</h1> : <ActivationForm name={name}/>
+    return !magicHash ? <h1>Wrong hash</h1> : <ActivationForm name={name}/>
 };
